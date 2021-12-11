@@ -2,10 +2,10 @@ package com.example.gibberish.soundex;
 
 import org.springframework.context.annotation.Bean;
 
-public class Soundex extends org.apache.commons.codec.language.Soundex {
+public class Soundex extends org.apache.commons.codec.language.RefinedSoundex {
 
     //                                           ABCDEFGHIJKLMNOPQRSTUVWXYZ
-    public static final String CUSTOM_MAPPING = "01237120722455812623810272";
+    public static final String CUSTOM_MAPPING = "01360230043788013956020505";
 
     public Soundex() {
         super(CUSTOM_MAPPING);

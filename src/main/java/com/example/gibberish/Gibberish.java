@@ -25,15 +25,12 @@ public class Gibberish {
         String gibberish = "";
         String codes = soundex.encode(str);
 
-        String[] inverse = {"", "BFPV", "CGJKQSXZ", "DT", "L", "MN", "R", "EIY","OU","AHW"};
+        String[] inverse = {"AEIOUYHW", "BP", "FV", "CKQG", "J", "XZS", "DT", "L", "MN", "R"};
 
         for (String code : codes.split(" ")) {
             for (char c : code.toCharArray()) {
-                if(c == '0') {
-                    break;
-                }
                 // Char is 0 - 9
-                else if(c >= 48 && c <= 57) {
+                if(c >= 48 && c <= 57) {
                     gibberish += Character.toString(inverse[c - 48].charAt((int) (Math.random() * inverse[c - 48].length())));
                 }
                 else {
