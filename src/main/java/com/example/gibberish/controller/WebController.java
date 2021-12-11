@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class WebController {
 
     private ProverbRepository repository;
-    Soundex soundex = new Soundex();
 
     @Autowired
     WebController(ProverbRepository repository) {
@@ -27,6 +26,6 @@ public class WebController {
         if(text == null) {
             text = repository.getRandom();
         }
-        return new Gibberish(text, String.join(" ", soundex.encode(text)));
+        return new Gibberish(text);
     }
 }

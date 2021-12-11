@@ -1,5 +1,7 @@
 package com.example.gibberish.soundex;
 
+import org.springframework.context.annotation.Bean;
+
 public class Soundex extends org.apache.commons.codec.language.Soundex {
 
     //                                           ABCDEFGHIJKLMNOPQRSTUVWXYZ
