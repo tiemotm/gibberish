@@ -1,6 +1,14 @@
 package com.example.gibberish.soundex;
 
 public class Soundex extends org.apache.commons.codec.language.Soundex {
+
+    //                                           ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    public static final String CUSTOM_MAPPING = "01237120722455812623810272";
+
+    public Soundex() {
+        super(CUSTOM_MAPPING);
+    }
+
     @Override
     public String encode(String str) {
         String[] words = str.split("\\s+");
