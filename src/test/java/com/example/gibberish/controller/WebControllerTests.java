@@ -35,13 +35,13 @@ public class WebControllerTests {
     @Test
     public void gibberShouldReturnRandomGibberishIfNoParams() throws Exception {
         when(repository.getRandom()).thenReturn("foo").thenReturn("bar").thenReturn("foobar");
-        this.mockMvc.perform(get("/api/gibber"))
+        this.mockMvc.perform(get("/gibber"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("foo")));
-        this.mockMvc.perform(get("/api/gibber"))
+        this.mockMvc.perform(get("/gibber"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("bar")));
-        this.mockMvc.perform(get("/api/gibber"))
+        this.mockMvc.perform(get("/gibber"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("foobar")));
     }
@@ -49,14 +49,14 @@ public class WebControllerTests {
     @Test
     public void gibberShouldReturnJSON() throws Exception {
         when(repository.getRandom()).thenReturn("foo");
-        this.mockMvc.perform(get("/api/gibber"))
+        this.mockMvc.perform(get("/gibber"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
 
     @Test
     public void gibberShouldReturnGibberishFromParameter() throws Exception {
-        this.mockMvc.perform(get("/api/gibber?text=foo"))
+        this.mockMvc.perform(get("/gibber?text=foo"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("foo")));
     }
