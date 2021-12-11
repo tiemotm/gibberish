@@ -28,6 +28,7 @@ public class Gibberish {
         String[] inverse = {"AEIOUYHW", "BP", "FV", "CKQG", "J", "XZS", "DT", "L", "MN", "R"};
 
         for (String code : codes.split(" ")) {
+            code = code.substring(1, code.length());
             for (char c : code.toCharArray()) {
                 // Char is 0 - 9
                 if(c >= 48 && c <= 57) {
@@ -41,6 +42,6 @@ public class Gibberish {
             gibberish += " ";
         }
 
-        return gibberish;
+        return gibberish.substring(0, gibberish.length() - 1);
     }
 }
